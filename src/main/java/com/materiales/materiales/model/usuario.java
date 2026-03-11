@@ -68,7 +68,7 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public List<Material> getMateriales() {
+    public List<material> getMateriales() {
         return materiales;
     }
 
