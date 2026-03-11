@@ -9,87 +9,74 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-
-
-
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 
-
-
 @Entity
-@Table (name = "Material")
+@Table(name = "Material")
 public class material {
-   
-@Id
-     @Column(name = "id", nullable = false , length= 250)
+
+    @Id
+    @Column(name = "id", nullable = false, length = 250)
     private int id;
 
-     @Column(name = "name", nullable = false, length= 70)
+    @Column(name = "name", nullable = false, length = 70)
     private String name;
 
-     @Column(name = "condicion", nullable = false , length= 250)
+    @Column(name = "condicion", nullable = false, length = 250)
     private String condition;
 
-     @Column (name = "BorrowDate", nullable = false , length= 250)
+    @Column(name = "BorrowDate", nullable = false, length = 250)
     private String date;
 
-     @Column (name = "ReturnDate", nullable = false , length= 250)
+    @Column(name = "ReturnDate", nullable = false, length = 250)
     private String returndate;
 
-     @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
-     public int getId() {
-         return id;
-     }
+    public int getId() {
+        return id;
+    }
 
-     public void setId(int id) { if (id <= 0) 
-        {throw new IllegalArgumentException("Pero papehhhhh como va a ser el ID del material vacio");}
-         this.id = id;
-     }
+    public void setId(int id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("Pero papehhhhh como va a ser el ID del material vacio");
+        }
+        this.id = id;
+    }
 
-     public String getName() {
-         return name;
-     }
+    public String getName() {
+        return name;
+    }
 
-     public void setName(String name) {
-         this.name = name;
-     }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-     public String getCondition() {
-         return condition;
-     }
+    public String getCondition() {
+        return condition;
+    }
 
-     public void setCondition(String condition) {
-         this.condition = condition;
-     }
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
 
-     public String getDate() {
-         return date;
-     }
+    public String getDate() {
+        return date;
+    }
 
-     public void setDate(String date) {
-         this.date = date;
-     }
+    public void setDate(String date) {
+        this.date = date;
+    }
 
-     public String getReturndate() {
-         return returndate;
-     }
+    public String getReturndate() {
+        return returndate;
+    }
 
-     public void setReturndate(String returndate) {
-         this.returndate = returndate;
-     }
-        
+    public void setReturndate(String returndate) {
+        this.returndate = returndate;
+    }
 
-
-
-
-
-
-
- 
 }
