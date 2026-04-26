@@ -1,6 +1,8 @@
 package com.materiales.materiales.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -16,9 +18,10 @@ import lombok.NoArgsConstructor;
 @Table(name = "Material")
 public class material {
 
-    @Id
-    @Column(name = "id", nullable = false, length = 250)
-    private int id;
+   @Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column(name = "id", nullable = false, length = 250)
+private int id;
 
     @Column(name = "name", nullable = false, length = 70)
     private String name;
@@ -34,7 +37,7 @@ public class material {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private usuario usuario;
 
     public int getId() {
         return id;
@@ -77,6 +80,15 @@ public class material {
 
     public void setReturndate(String returndate) {
         this.returndate = returndate;
+    }
+
+    // ← AGREGADO
+    public usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(usuario usuario) {
+        this.usuario = usuario;
     }
 
 }

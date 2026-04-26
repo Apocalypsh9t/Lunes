@@ -1,0 +1,11 @@
+package com.materiales.materiales.dto;
+
+import lombok.Data;
+
+@Data
+public class usuarioResponseDTO {
+    private Long idUsuario;
+    private String nombre;
+    private String correo;
+    // No expones el documento por seguridad
+}
