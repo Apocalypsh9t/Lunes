@@ -38,6 +38,7 @@ public class MaterialesApplication {
             request.setCondition("Bueno");
             request.setDate("2026-04-26");
             request.setReturndate("2026-05-10");
+            request.setUsuarioId(u1.getIdUsuario());
 
       materialResponseDTO response = materialService.guardar(request);
 

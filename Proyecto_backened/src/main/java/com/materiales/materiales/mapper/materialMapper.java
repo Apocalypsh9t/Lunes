@@ -14,6 +14,7 @@ public interface materialMapper {
     @Mapping(target = "id", source = "id")
     @Mapping(target = "name", source = "name")
     @Mapping(target = "condition", source = "condition")
+    @Mapping(target = "nombreUsuario", source = "usuario.nombre")
     materialResponseDTO toResponseDTO(material mat);
 
     List<materialResponseDTO> toResponseDTOList(List<material> materiales);

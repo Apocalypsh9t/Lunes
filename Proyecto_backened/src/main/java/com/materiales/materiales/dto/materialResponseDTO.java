@@ -8,5 +8,6 @@ public class materialResponseDTO {
     private int id;
     private String name;
     private String condition;
-    // No incluyes información sensible que no quieres exponer
+    private String nombreUsuario;
+ 
 }
